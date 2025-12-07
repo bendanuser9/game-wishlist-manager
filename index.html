@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Website responsive on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Wishlist Manager</title>
+    <!-- link to css file-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Game Wishlist Manager</h1>
+
+    <nav>
+        <!--navigation for switching between views-->
+        <button class="nav-btn active" id="searchTab">Search Games</button>
+        <button class="nav-btn" id="wishlistTab">My Wishlist (<span id="wishlistCount">0</span>)</button>
+    </nav>
+    <!--theme toggle button-->
+    <button id="themeToggle" class="theme-toggle">Dark Mode</button>
+    <!--search button and input-->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for games...">
+        <button id="searchBtn">Search</button>
+    </div>
+</header>
+
+<main>
+    <!--search results section-->
+    <section id="searchSection" class="active">
+        <div id="searchResults"></div>
+    </section>
+    <!--wishlist section-->
+    <section id="wishlistSection">
+        <h2>My Wishlist</h2>
+        <div id="wishlistResults"></div>
+    </section>
+</main>
+    <!--link to external JavaScript file-->
+<script src="script.js"></script>
+</body>
+</html>

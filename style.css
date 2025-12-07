@@ -1,0 +1,212 @@
+       
+       
+       /*remove default browser spacing */
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        /*light mode colors*/
+    :root {
+        --bg-primary: #f5f5f5;
+        --bg-secondary: #ffffff;
+        --text-primary: #333;
+        --text-secondary: #666;
+        --accent: #6366f1;
+        --accent-hover: #4f46e5;
+        --border: #ddd;
+        --card-shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    /*Dark mode colors*/
+    [data-theme="dark"] {
+        --bg-primary: #1a1a1a;
+        --bg-secondary: #2d2d2d;
+        --text-primary: #ffffff;
+        --text-secondary: #b0b0b0;
+        --accent: #818cf8;
+        --accent-hover: #6366f1;
+        --border: #404040;
+        --card-shadow: rgba(0, 0, 0, 0.3);
+    }
+    
+    /*Overall page styling*/
+    body {
+        font-family: Arial, sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        padding: 20px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /*Main header container*/
+    header {
+        background-color: var(--bg-secondary);
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px var(--card-shadow);
+    }
+
+    /*main title*/
+    h1 {
+        color: #6366f1;
+    }
+
+    /*container for search input and button*/
+    .search-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    /*search input field*/
+    #searchInput {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+
+    /*search button styling*/
+    #searchBtn {
+        padding: 10px 20px;
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /*search button hover effect*/
+    #searchBtn:hover {
+        background-color: var(--accent-hover);
+    }
+
+    /*grid for game cards adjusts columns automatically*/
+    #searchResults {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    /*individual game card container*/
+    .game-card {
+        background-color: var(--bg-secondary);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px var(--card-shadow);
+        transition: transform 0.2s;
+    }
+
+    /*game card hover effect*/
+    .game-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /*game image*/
+    .game-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /*game title inside card*/
+    .game-card h3 {
+        padding: 15px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    /*game data (rating, release date)*/
+    .game-card p {
+        padding: 0 15px;
+        padding-bottom: 10px;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    /*add/remove from wishlist button*/
+    .wishlist-btn {
+        width: calc(100% - 30px);
+        margin: 0 15px 15px 15px;
+        padding: 10px;
+        background-color: #6366f1;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: background-color 0.2s;
+    }
+
+    /*wishlist button hover*/
+    .wishlist-btn:hover {
+        background-color: #4f46e5;
+    }
+
+    /*navigation button container*/
+    nav {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    /*naviagation tab buttons*/
+    .nav-btn {
+        padding: 10px 20px;
+        background-color: #e0e0e0;
+        color: #333;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.2s;
+    }
+
+    /*navigation hover effect*/
+    .nav-btn:hover {
+        background-color: #d0d0d0;
+    }
+
+    /*active navigation tab styling*/
+    .nav-btn.active {
+        background-color: #6366f1;
+        color: white;
+    }
+
+    /*hide all sections by default*/
+    section {
+        display: none;
+    }
+
+    /*show only active section*/
+    section.active{
+        display: block;
+    }
+
+    /*theme toggle button styling*/
+    .theme-toggle {
+        padding: 8px 16px;
+        background-color: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin: 10px 0;
+        transition: background-color 0.2s;
+    }
+
+    /*theme toggle hover effect*/
+    .theme-toggle:hover {
+        background-color: var(--accent-hover);
+    }

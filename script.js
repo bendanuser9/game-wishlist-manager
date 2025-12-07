@@ -1,6 +1,9 @@
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn'); 
-    const searchResults =document.getElementById('searchResults');
+    const searchResults = document.getElementById('searchResults');
+    const genreFilter = document.getElementById('genreFilter');
+    const platformFilter = document.getElementById('platformFilter');
+    const sortFilter = document.getElementById('sortFilter');
      //API for fetching game data
     const API_KEY = '7a18d8ab5ede47f0b0ab0450cbeaa6c0';
     const API_BASE = 'https://api.rawg.io/api'
@@ -160,8 +163,31 @@
         }
         //show loading message while fetching 
         searchResults.innerHTML = '<p>Loading games...</p>';
-        //API url with search query
-        const url = `${API_BASE}/games?key=${API_KEY}&search=${searchTerm}`;
+
+        // Get filter values
+        const genre = genreFilter.value;
+        const platform = platformFilter.value;
+
+        // Build API URL with search query and filters
+        let url = `${API_BASE}/games?key=${API_KEY}&search=${searchTerm}`;
+
+        // Add genre filter if selected
+        if (genre) {
+            url += `&genres=${genre}`;
+        }
+
+        // Add platform filter if selected
+        if (platform) {
+            url += `&platforms=${platform}`;
+        }
+
+        // Get sort value
+        const sort = sortFilter.value;
+
+        // Add sorting if selected
+        if (sort) {
+            url += `&ordering=${sort}`;
+        }
         
         const response = await fetch(url);
         const data = await response.json();

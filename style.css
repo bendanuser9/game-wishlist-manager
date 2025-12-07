@@ -61,6 +61,31 @@
         margin-top: 20px;
     }
 
+    /* Filter dropdowns container */
+    .filters {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    /* Filter dropdown styling */
+    .filters select {
+        padding: 10px;
+        border: 2px solid var(--border);
+        border-radius: 4px;
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+        cursor: pointer;
+        font-size: 14px;
+        min-width: 150px;
+    }
+
+    /* Filter dropdown hover effect */
+    .filters select:hover {
+        border-color: var(--accent);
+    }
+
     /*search input field*/
     #searchInput {
         flex: 1;
